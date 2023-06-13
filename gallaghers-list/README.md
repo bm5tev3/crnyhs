@@ -26,10 +26,15 @@
 2. [Posit Cloud](https://posit.cloud/spaces/384032/join?access_code=wD_UkGiFJvCJIRWZYm-gSpXoc6uGZ_sfkXkQlKUR)
 3. [ChatGPT](https://chat.openai.com/chat) and [Bard](https://bard.google.com/)
 
+### To do
 - [x] Decide on a language
 - [x] Set up time with Sean and others this week
 
 ### FAQ
 
-Q: Why did you decide on R as the programming language for Gallagher's List?
+Q: Why did you decide on R (over Python) as the programming language for Gallagher's List?
 A: 
+
+Q: What resources did you consider in making this decision?
+A: 
+
