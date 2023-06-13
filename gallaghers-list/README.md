@@ -24,11 +24,21 @@
 
 1. [Github](https://github.com/bm5tev3/crnyhs/tree/main/gallaghers-list)
 2. [Posit Cloud](https://posit.cloud/spaces/384032/join?access_code=wD_UkGiFJvCJIRWZYm-gSpXoc6uGZ_sfkXkQlKUR)
-3. [ChatGPT](https://chat.openai.com/chat) and [Bard](https://bard.google.com/)
+3. [ChatGPT](https://chat.openai.com/chat) and/or [Bard](https://bard.google.com/)
 
 ### To do
+
+#### 2023-06-13
 - [x] Decide on a language
 - [x] Set up time with Sean and others this week
+#### 2023-06-14
+- [ ] Complete FAQ questions below
+- [ ] [Review how to create forks and pull requests in GitHub](https://youtu.be/nT8KGYVurIU)
+- [ ] Discuss collecting user stories with Miguel G
+- [ ] Create sample apps in Posit Connect with ChatGPT and/or Bard
+#### 2023-06-15
+- [ ] Collect user stories from Sean W
+- [ ] Attend Supervisor Appreciation Day
 
 ### FAQ
 
