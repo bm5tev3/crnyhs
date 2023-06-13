@@ -32,8 +32,8 @@
 - [x] Decide on a language
 - [x] Set up time with Sean and others this week
 #### 2023-06-14
-- [ ] Complete FAQ questions below
 - [ ] [Review how to create forks and pull requests in GitHub](https://youtu.be/nT8KGYVurIU)
+- [ ] Complete FAQ questions below
 - [ ] Discuss collecting user stories with Miguel G
 - [ ] Create sample apps in Posit Connect with ChatGPT and/or Bard
 #### 2023-06-15
