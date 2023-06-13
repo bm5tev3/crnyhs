@@ -22,9 +22,14 @@
 
 ### Technology
 
-1. Github
+1. [Github](https://github.com/bm5tev3/crnyhs/tree/main/gallaghers-list)
 2. [Posit Cloud](https://posit.cloud/spaces/384032/join?access_code=wD_UkGiFJvCJIRWZYm-gSpXoc6uGZ_sfkXkQlKUR)
-3. ChatGPT/Bard
+3. [ChatGPT](https://chat.openai.com/chat) and [Bard](https://bard.google.com/)
 
-- [ ] Decide on a language
-- [ ] Set up time with Sean and others this week
+- [x] Decide on a language
+- [x] Set up time with Sean and others this week
+
+### FAQ
+
+Q: Why did you decide on R as the programming language for Gallagher's List?
+A: 
