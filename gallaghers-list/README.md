@@ -33,8 +33,8 @@
 ### FAQ
 
 Q: Why did you decide on R (over Python) as the programming language for Gallagher's List?
-A: 
+A: [Insert response here]
 
 Q: What resources did you consider in making this decision?
-A: 
+A: [Insert response here]
 
