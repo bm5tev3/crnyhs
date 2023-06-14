@@ -48,6 +48,9 @@ A: We decided on R because, R is easier to build visualization for oue web app, 
 Q: What resources did you consider in making this decision?
 A: These links helped me with this descision, https://www.youtube.com/watch?v=1gdKC5O0Pwc and https://www.geeksforgeeks.org/r-vs-python/
 
+Q: How do I get updates from the github repo into posit cloud?
+A: First select the git tab in posit cloud and then click pull the select the 3 dot icon and relaunch project. 
+
 ### User questions 
 
 1. What are your goals when using this web app
