@@ -43,7 +43,7 @@
 ### FAQ
 
 Q: Why did you decide on R (over Python) as the programming language for Gallagher's List?
-A: We dicided to use R rather then Pyton for the implactions that R will have for the app, such as the visualation of the app. I felt that it was more suited for this type of project.
+A: We decided to use R rather then Pyton for the implactions that R will have for the app, such as the visualation of the app. I felt that it was more suited for this type of project.
 Q: What resources did you consider in making this decision?
 A I will link the youtube videos that helped me decide on which language
 - https://youtu.be/1gdKC5O0Pwc
