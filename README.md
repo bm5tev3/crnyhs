@@ -70,6 +70,25 @@ A: First select the git tab in posit cloud and then click pull the select the 3 
 4. What are you looking to accomplished while using this app 
 5. Is there anything else you'd like to share
 
+### Sean's meeting notes
+the app should have info on: 
+-who is the person 
+-where do they work 
+-what is their skill set/ position 
+-background/experience 
+
+the person doing the sereach should know who is recommanding the person
+*maybe pull information from LinkedIn
+get people into putting in information
+be able to serach skills and specific people would poped up (skill selection) 
+
+requirments:
+-making it as simpile as possible 
+-make the sereach easy (word choice) 
+
+-make sure you actually know the person you are recommanding 
+-perhaps have ratings for the people.( simple; have indivival rating) Have up votes and down votes, people would be able to see why.
+
 ### Does the app have this?
 - [ ] Does the app ask who is using the app
 - [ ] Does it ask for the purpose of using the app
