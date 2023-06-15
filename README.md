@@ -68,4 +68,14 @@ A: First select the git tab in posit cloud and then click pull the select the 3 
 2. Are there any other tools you'll find useful 
 3. What are some requirements that should be taken into account durring the developemy of the web app
 4. What are you looking to accomplished while using this app 
-5. Is there anything else you'd like to share 
+5. Is there anything else you'd like to share
+
+### Does the app have this?
+- [ ] Does the app ask who is using the app
+- [ ] Does it ask for the purpose of using the app
+- [ ] Ask further questions to gather more about the user needs
+- [ ] Is there a skill section?
+- [ ] Is the user able to add any discriptions about the recommendees
+- [ ] Is there a rating system in place?
+When adding these functions into app they should be in the simpliest form to not overload the user when in use.
+The simpler the layout the better the use will be.
