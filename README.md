@@ -77,5 +77,6 @@ A: First select the git tab in posit cloud and then click pull the select the 3 
 - [ ] Is there a skill section?
 - [ ] Is the user able to add any discriptions about the recommendees
 - [ ] Is there a rating system in place?
+
 When adding these functions into app they should be in the simpliest form to not overload the user when in use.
 The simpler the layout the better the use will be.
