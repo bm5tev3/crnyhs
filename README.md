@@ -14,11 +14,14 @@
 
 ### Guiding principles
 
-1. Ask Google first
-2. [Program in pairs](https://youtu.be/hc7jHnH5ijE)
+1. Simplicity is the ultimate sophistication
+        1. In order for our app to be widely adopted, it needs to be simple to use.
+3. Google it
+  	1. New problems are relative, it's likely someone else has come across it or a similar problem and a solution has been posted online.
+5. [Program in pairs](https://youtu.be/hc7jHnH5ijE)
 	1. [Debugging](https://shiny.posit.co/r/articles/improve/debugging/)
 		1. GitHub account creation
-3. [Deliver increments of value](https://www.rebelscrum.site/post/the-value-of-incremental-delivery-in-scrum)
+6. [Deliver increments of value](https://www.rebelscrum.site/post/the-value-of-incremental-delivery-in-scrum)
 
 ### Technology
 
@@ -37,8 +40,16 @@
 - [x] Discuss collecting user stories with Miguel G
 - [ ] Create sample apps in Posit Connect with ChatGPT and/or Bard
 #### 2023-06-15
-- [ ] Collect user stories from Sean W
-- [ ] Attend Supervisor Appreciation Day
+- [x] Collect user stories from Sean W
+- [x] Attend Supervisor Appreciation Day
+- [ ] Convert Seans ideas into app requirements
+- [ ] Document process to authenticate Posit Cloud to communicate with GitHub
+#### 2023-06-20
+- [ ] Compare Gallagher's List ideas to [Angi](https://www.angi.com/) (fka Angie's List)
+- [ ] Document user experience of each persona (e.g., Reviewers & Seekers)
+- [ ] Meet with Amy & Megan
+#### 2023-06-21
+- [ ] Meet with Rachael & Nicole
 
 ### FAQ
 
@@ -47,6 +58,9 @@ A: We decided on R because, R is easier to build visualization for oue web app, 
 
 Q: What resources did you consider in making this decision?
 A: These links helped me with this descision, https://www.youtube.com/watch?v=1gdKC5O0Pwc and https://www.geeksforgeeks.org/r-vs-python/
+
+Q: How do I get updates from the github repo into posit cloud?
+A: First select the git tab in posit cloud and then click pull the select the 3 dot icon and relaunch project. 
 
 ### User questions 
 
@@ -57,7 +71,6 @@ A: These links helped me with this descision, https://www.youtube.com/watch?v=1g
 5. Is there anything else you'd like to share
 
 ### Sean's meeting notes
-
 the app should have info on: 
 -who is the person 
 -where do they work 
@@ -75,3 +88,14 @@ requirments:
 
 -make sure you actually know the person you are recommanding 
 -perhaps have ratings for the people.( simple; have indivival rating) Have up votes and down votes, people would be able to see why.
+
+### Does the app have this?
+- [ ] Does the app ask who is using the app
+- [ ] Does it ask for the purpose of using the app
+- [ ] Ask further questions to gather more about the user needs
+- [ ] Is there a skill section?
+- [ ] Is the user able to add any discriptions about the recommendees
+- [ ] Is there a rating system in place?
+
+When adding these functions into app they should be in the simpliest form to not overload the user when in use.
+The simpler the layout the better the use will be.
