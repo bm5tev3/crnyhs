@@ -1,0 +1,157 @@
+library(shiny)
+library(shinydashboard)
+library(shinythemes)
+
+# Define names and skills for autocomplete
+names <- c("Brian Cortes", "Alexander Balbuena")
+skills <- list(
+  "Brian Cortes" = c("Communication", "Microsoft Excel", "Microsoft PowerPoint"),
+  "Alexander Balbuena" = c("Communication", "Microsoft Excel", "Microsoft PowerPoint", "Teamwork", "Time and Attendance")
+)
+
+# Generate 10 random names with skills
+first_names <- c("John", "Robert", "Michael", "William", "David", "James", "Joseph", "Daniel", "Andrew", "Anthony")
+last_names <- c("Smith", "Johnson", "Williams", "Jones", "Brown", "Davis", "Miller", "Wilson", "Moore", "Taylor")
+new_skills <- c("Sales", "Computer skills", "Financial planning", "Reading comprehension", "Math", "Problem-solving")
+
+for (i in 1:10) {
+  first_name <- sample(first_names, 1)
+  last_name <- sample(last_names, 1)
+  name <- paste(first_name, last_name)
+  names <- c(names, name)
+  numSkills <- sample(1:5, 1)
+  skillList <- sample(c(new_skills, skills[[sample(names, 1)]]), numSkills)
+  skills[[name]] <- skillList
+}
+
+# Sort names alphabetically
+names <- sort(names)
+
+# Define UI
+ui <- dashboardPage(
+  dashboardHeader(title = "Gallagher's List", titleWidth = 350),
+  dashboardSidebar(
+    sidebarMenu(
+      menuItem("Home", tabName = "home", icon = icon("home")),
+      menuItem("Search", tabName = "search", icon = icon("search"))
+    )
+  ),
+  dashboardBody(
+    tabItems(
+      # Home tab
+      tabItem(tabName = "home",
+              fluidRow(
+                column(12,
+                       h2("Welcome")
+                )
+              )
+      ),
+      # Search tab
+      tabItem(tabName = "search",
+              fluidRow(
+                column(12,
+                       selectInput("searchTypeInput", "Search By:", choices = c("Name", "Skill"), selected = "Name"),
+                       conditionalPanel(
+                         condition = "input.searchTypeInput == 'Name'",
+                         textInput("nameInput", "Enter Name:")
+                       ),
+                       conditionalPanel(
+                         condition = "input.searchTypeInput == 'Skill'",
+                         textInput("skillInput", "Enter Skill:")
+                       ),
+                       actionButton("searchButton", "Search")
+                )
+              ),
+              fluidRow(
+                column(12,
+                       tableOutput("resultsTable")
+                )
+              )
+      )
+    )
+  )
+)
+
+# Define server
+server <- function(input, output, session) {
+  # Function to perform search by name
+  performSearchByName <- function(name) {
+    matchingNames <- names[grep(name, names, ignore.case = TRUE)]
+    result <- lapply(matchingNames, function(name) {
+      list(
+        Name = name,
+        Skills = skills[[name]]
+      )
+    })
+    return(result)
+  }
+  
+  # Function to perform search by skill
+  performSearchBySkill <- function(skill) {
+    matchingNames <- names[sapply(skills, function(skillsList) any(grepl(skill, skillsList, ignore.case = TRUE)))]
+    result <- lapply(matchingNames, function(name) {
+      list(
+        Name = name,
+        Skills = skills[[name]]
+      )
+    })
+    return(result)
+  }
+  
+  # Render search results table
+  output$resultsTable <- renderTable({
+    if (input$searchButton > 0) {
+      if (input$searchTypeInput == "Name") {
+        searchTerm <- input$nameInput
+        result <- performSearchByName(searchTerm)
+      } else {
+        searchTerm <- input$skillInput
+        result <- performSearchBySkill(searchTerm)
+      }
+      
+      if (!is.null(result)) {
+        df <- data.frame(Name = character(), Skills = character(), stringsAsFactors = FALSE)
+        for (res in result) {
+          df <- rbind(df, data.frame(Name = res$Name, Skills = paste(res$Skills, collapse = ", ")))
+        }
+        df
+      }
+    }
+  })
+  
+  # Initialize navigation
+  session$onSessionEnded(function() {
+    stopApp()
+  })
+  
+  # Navigate to home or search page
+  observe({
+    if (is.null(input$tabName)) {
+      session$sendCustomMessage(
+        type = "navigatePage",
+        message = list(page = "home")
+      )
+    } else if (input$tabName == "home") {
+      session$sendCustomMessage(
+        type = "navigatePage",
+        message = list(page = "home")
+      )
+    } else if (input$tabName == "search") {
+      session$sendCustomMessage(
+        type = "navigatePage",
+        message = list(page = "search")
+      )
+    }
+  })
+  
+  # Send custom messages for navigation
+  observe({
+    session$sendCustomMessage(
+      type = "navigatePage",
+      message = list(page = input$tabName)
+    )
+  })
+}
+
+# Run the application
+shinyApp(ui = ui, server = server)
