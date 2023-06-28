@@ -27,6 +27,25 @@ for (i in 1:10) {
 # Sort names alphabetically
 names <- sort(names)
 
+# Define positions
+positions <- c(
+  "Insurance underwriter", "Sales Agent", "Broker", "Insurance risk analyst",
+  "Insurance claims investigator", "Accountant", "CFO"
+)
+
+# Define "looking for" options
+lookingForOptions <- c(
+  "Insurance underwriter", "Sales Agent", "Broker", "Insurance risk analyst",
+  "Insurance claims investigator", "Accountant", "CFO"
+)
+
+# Remove "unemployed" from "looking for" options
+lookingForOptions <- lookingForOptions[lookingForOptions != "Unemployed"]
+
+# Save and load "looking for" options
+saveRDS(lookingForOptions, "looking_for_options.rds")
+lookingForOptions <- readRDS("looking_for_options.rds")
+
 # Define UI
 ui <- dashboardPage(
   dashboardHeader(title = "Gallagher's List", titleWidth = 350),
@@ -74,13 +93,18 @@ ui <- dashboardPage(
 
 # Define server
 server <- function(input, output, session) {
+  # Load "looking for" options
+  lookingForOptions <- readRDS("looking_for_options.rds")
+  
   # Function to perform search by name
   performSearchByName <- function(name) {
     matchingNames <- names[grep(name, names, ignore.case = TRUE)]
     result <- lapply(matchingNames, function(name) {
       list(
         Name = name,
-        Skills = skills[[name]]
+        Position = ifelse(name %in% c("Brian Cortes", "Alexander Balbuena"), "Intern at GallagherRe", sample(positions, 1)),
+        Skills = skills[[name]],
+        LookingFor = sample(lookingForOptions, 1)
       )
     })
     return(result)
@@ -92,7 +116,9 @@ server <- function(input, output, session) {
     result <- lapply(matchingNames, function(name) {
       list(
         Name = name,
-        Skills = skills[[name]]
+        Position = ifelse(name %in% c("Brian Cortes", "Alexander Balbuena"), "Intern at GallagherRe", sample(positions, 1)),
+        Skills = skills[[name]],
+        LookingFor = sample(lookingForOptions, 1)
       )
     })
     return(result)
@@ -110,9 +136,9 @@ server <- function(input, output, session) {
       }
       
       if (!is.null(result)) {
-        df <- data.frame(Name = character(), Skills = character(), stringsAsFactors = FALSE)
+        df <- data.frame(Name = character(), Position = character(), Skills = character(), Looking.for = character(), stringsAsFactors = FALSE)
         for (res in result) {
-          df <- rbind(df, data.frame(Name = res$Name, Skills = paste(res$Skills, collapse = ", ")))
+          df <- rbind(df, data.frame(Name = res$Name, Position = res$Position, Skills = paste(res$Skills, collapse = ", "), Looking.for = res$LookingFor))
         }
         df
       }
