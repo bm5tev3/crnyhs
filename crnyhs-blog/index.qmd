@@ -1,39 +1,59 @@
-project:
-  type: website
+library(yaml)
 
-website:
-  title: "ajgre-crnyhs-blog"
-  navbar:
-    right:
-      - about.qmd
-      - icon: github
-        href: https://github.com/your-github-account
-      - icon: twitter
-        href: https://twitter.com/your-twitter-account
+config <- list(
+  project = list(
+    type = "website"
+  ),
+  
+  website = list(
+    title = "ajgre-crnyhs-blog",
+    navbar = list(
+      right = list(
+        "about.qmd",
+        list(icon = "github", href = "https://github.com/your-github-account"),
+        list(icon = "twitter", href = "https://twitter.com/your-twitter-account")
+      )
+    )
+  ),
+  
+  format = list(
+    html = list(
+      theme = "cosmo",
+      css = "styles.css"
+    )
+  ),
+  
+  editor = "visual",
+  
+  listing = list(
+    contents = "posts",
+    sort = "date desc",
+    type = "default",
+    categories = TRUE,
+    sort_ui = FALSE,
+    filter_ui = FALSE
+  ),
+  
+  page_layout = "full",
+  title_block_banner = TRUE
+)
 
-format:
-  html:
-    theme: cosmo
-    css: styles.css
+data <- list(
+  list(
+    Name = "Restaurant List",
+    Description = "The NY Restaurant List is a convenient tool to locate nearby dining options..."
+  ),
+  list(
+    Name = "Reinsurance Contact List",
+    Description = "Specifically designed to streamline the process for reinsurers to find..."
+  ),
+  list(
+    Name = "Gallagher List",
+    Description = "Brian and Alex are collaborating on the development of Gallagher's List..."
+  )
+)
 
-editor: visual
+config$data <- data
 
-listing:
-  contents: posts
-  sort: "date desc"
-  type: default
-  categories: true
-  sort-ui: false
-  filter-ui: false
-page-layout: full
-title-block-banner: true
-
-data:
-  - Name: "Restaurant List"
-    Description: "The NY Restaurant List is a convenient tool to locate nearby dining options in close proximity to the NY office. This list is particularly valuable for various occasions, including celebrations and meetings with clients. This resource significantly minimizes the time and effort required when searching for a suitable restaurant. By providing a carefully curated selection of nearby dining establishments, individuals can swiftly access a range of options without the need for extensive research or browsing. Individuals can easily identify suitable restaurants that offer a desirable dining experience without having to venture far from their workplace. Whether it's a team celebration or an important client meeting, the Restaurant List provides a go-to guide for selecting a restaurant that meets the needs and preferences of the occasion, ensuring a seamless and enjoyable dining experience for all involved."
-
-  - Name: "Reinsurance Contact List"
-    Description: "Specifically designed to streamline the process for reinsurers to find and access essential contact information for employment and other purposes. This comprehensive list comprises over 500 names and includes crucial details such as individuals' names, company affiliations, positions, and additional relevant information."
-
-  - Name: "Gallagher List"
-    Description: "Brian and Alex are collaborating on the development of Gallagher's List, a web app tailored for Gallagher. This innovative platform will empower individuals to effortlessly connect with skilled professionals who match their specific requirements. By streamlining the app's interface, Brian and Alex aim to provide users with a seamless and user-friendly experience."
+# Save the YAML configuration to a file
+write_yaml(config, "config.yaml")
