@@ -41,15 +41,15 @@ config <- list(
 data <- list(
   list(
     Name = "Restaurant List",
-    Description = "The NY Restaurant List is a convenient tool to locate nearby dining options..."
+    Description = "The NY Restaurant List is a convenient tool to locate nearby dining options in close proximity to the NY office. This list particularly valuable for various occasions, including celebrations and meetings with clients. This resource significantly minimizes the time and effort required when search for a suitable restaurant. By providing a carefully curated selection of nearby dining establishments, individuals can swiftly access a range of options without the need for extensive research or browsing. This allows individuals to easily identify suitable restaunts that offer a desirable dining experience without having to venture far from their workplace. The Restaurant list provides a go-to-guide for selecting a restaurant that meets the needs and preferences of the occasion ensuring a seamless and enjoyable dining exprience for all involved."
   ),
   list(
     Name = "Reinsurance Contact List",
-    Description = "Specifically designed to streamline the process for reinsurers to find..."
+    Description = "A contact list is a curated compilation of individuals' names, contact information, and updated professional statuses. This list is designed to facilitate easy communication and efficient networking. It includes essential details such as phone numbers, email addresses, and possibly social media profiles. Moreover, the list keeps track of individuals' career transitions, indicating whether they have retired, been let go, switched companies, or experienced other relevant changes in their professional lives. The primary purpose of this contact list is to streamline connections, enabling swift and effective communication with individuals across various industries. It serves as a valuable resource for reaching out to people for a variety of purposes, such as job opportunities, collaborations, business partnerships, and other pertinent engagements. By maintaining accurate and up-to-date information, the contact list not only enhances the ease of communication but also aids in identifying potential candidates for job openings or other opportunities within one's network. The contact list serves as a dynamic tool that empowers individuals and organizations to harness their professional connections, fostering a network that extends beyond initial interactions and evolves to meet the changing needs of both parties."
   ),
   list(
     Name = "Gallagher List",
-    Description = "Brian and Alex are collaborating on the development of Gallagher's List..."
+    Description = "Brian and Alex are collaborating on the development of Gallagher's List, a web app tailored for Gallagher. This innovative plateform will empower indivituals to effortlessly connect with skilled professionals who match their specific requirements. By streaming the app's interface, Brain and Alex aim to provide users with a seamless and user-friendly experience."
   )
 )
 
